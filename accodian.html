@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>accodian</title>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var $tit = $(".accordion_banner .title"),
+            $cont = $(".accordion_banner .cont");
+        $cont.hide();
+
+        $tit.click(function(e){
+            e.preventDefault();
+            $(this).next().slideToggle(300);
+            // $(this).next().slideDown(300);
+            $tit.not(this).next().slideUp(300);
+            //return false;
+        });
+        $tit.eq(0).trigger("click");
+    });
+</script>
+
+</head>
+<body>
+
+<ul class="accordion_banner">
+    <li>
+        <a href="" class="title">menu1</a>
+        <div class="cont">menu1 cont</div>
+    </li>
+     <li>
+        <a href="" class="title">menu2</a>
+        <div class="cont">menu2 cont</div>
+    </li>
+</ul>
+</body>
+</html>
